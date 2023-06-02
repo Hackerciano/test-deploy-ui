@@ -7,7 +7,7 @@ import { Grid,
 } from "@mui/material";
 import { useEffect, useState } from "react";
 
-import AdminLogin from "./AdminLogin";
+// import AdminLogin from "./AdminLogin";
 // import AdminTable from "./AdminTable";
 
 
@@ -24,8 +24,8 @@ export default function AdminView (props) {
     }
 
     useEffect(() => {
-        getToday();
-        checkLoginCookie();
+        //getToday();
+        //checkLoginCookie();
     }, []);
 
 
@@ -93,57 +93,58 @@ export default function AdminView (props) {
             {
                 login
                 ?
-                <Grid container>
-                    <Grid item style={{display: 'block'}} xs={12}>
-                        <Grid container direction='row'>
-                            <Grid xs={8} style={{textAlign: 'left'}}>
-                            <Button 
-                                    variant='outlined'
-                                    style={{margin: '5px', display: 'inline-block'}}
-                                    onClick={(e) => getToday()}
-                                >
-                                    {'Hoy'}
-                                </Button>
-                            <Button 
-                                    variant='outlined'
-                                    style={{margin: '5px', display: 'inline-block'}}
-                                    onClick={(e) => setCurrentWeek(currentWeek - 1)}
-                                >
-                                    {'<'}
-                                </Button>
-                                <Button 
-                                    variant='outlined'
-                                    style={{margin: '5px', display: 'inline-block'}}
-                                    onClick={(e) => setCurrentWeek(currentWeek + 1)}
-                                >
-                                    {'>'}
-                                </Button>
-                                <Typography
-                                    style={{display: 'inline-block', marginLeft: '30px', fontSize: '18px', fontWeight: 'bold'}}
-                                >{stringWeek}</Typography>
-                            </Grid>
-                            <Grid xs={4}>
-                                <Button
-                                    variant='outlined'
-                                    sx={{float: 'right'}}
-                                    onClick={() => setUpdateData(true)}
-                                >
-                                    Actualizar
-                                </Button>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                    <Grid item sx={{margin: '30px 0px'}}>
-                        {/* <AdminTable 
-                            currentWeek={currentWeek} 
-                            setStringWeek={setStringWeek} 
-                            updateData={updateData} 
-                            setUpdateData={setUpdateData}
-                        /> */}
-                    </Grid>
-                </Grid>
+                <h1>HelloWorld</h1>
+                // <Grid container>
+                //     <Grid item style={{display: 'block'}} xs={12}>
+                //         <Grid container direction='row'>
+                //             <Grid xs={8} style={{textAlign: 'left'}}>
+                //             <Button 
+                //                     variant='outlined'
+                //                     style={{margin: '5px', display: 'inline-block'}}
+                //                     onClick={(e) => getToday()}
+                //                 >
+                //                     {'Hoy'}
+                //                 </Button>
+                //             <Button 
+                //                     variant='outlined'
+                //                     style={{margin: '5px', display: 'inline-block'}}
+                //                     onClick={(e) => setCurrentWeek(currentWeek - 1)}
+                //                 >
+                //                     {'<'}
+                //                 </Button>
+                //                 <Button 
+                //                     variant='outlined'
+                //                     style={{margin: '5px', display: 'inline-block'}}
+                //                     onClick={(e) => setCurrentWeek(currentWeek + 1)}
+                //                 >
+                //                     {'>'}
+                //                 </Button>
+                //                 <Typography
+                //                     style={{display: 'inline-block', marginLeft: '30px', fontSize: '18px', fontWeight: 'bold'}}
+                //                 >{stringWeek}</Typography>
+                //             </Grid>
+                //             <Grid xs={4}>
+                //                 <Button
+                //                     variant='outlined'
+                //                     sx={{float: 'right'}}
+                //                     onClick={() => setUpdateData(true)}
+                //                 >
+                //                     Actualizar
+                //                 </Button>
+                //             </Grid>
+                //         </Grid>
+                //     </Grid>
+                //     <Grid item sx={{margin: '30px 0px'}}>
+                //         {/* <AdminTable 
+                //             currentWeek={currentWeek} 
+                //             setStringWeek={setStringWeek} 
+                //             updateData={updateData} 
+                //             setUpdateData={setUpdateData}
+                //         /> */}
+                //     </Grid>
+                // </Grid>
                 :
-                <AdminLogin setLogin={setLogin}></AdminLogin>
+                <h1>Hello World 2</h1>// <AdminLogin setLogin={setLogin}></AdminLogin>
             }
         </Grid>
     )
