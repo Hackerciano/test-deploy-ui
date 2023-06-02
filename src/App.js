@@ -1,6 +1,6 @@
 import './App.css';
 // import ScheduleClass from './components/ScheduleClass';
-import AdminView from './components/Admin/AdminView';
+
 import VertizVIPLogo from './assets/logo.svg';
 import VertizLogo from './assets/logo.png';
 import { useEffect, useState } from 'react';
@@ -59,55 +59,7 @@ function App() {
 
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
-            <CssBaseline />
-            {/* Top bar */ }
-            <AppBar position="sticky" sx={{ bgcolor: colors.pink, height: '70px' }}>
-                <Toolbar>
-                    <Box
-                        component="img"
-                        sx={{
-                            height: 50,
-                            width: 200,
-                        }}
-                        alt="The house from the offer."
-                        src={VertizVIPLogo}
-                    />
-                    <Typography sx={{ flexGrow: 9 }}></Typography>
-                </Toolbar>
-            </AppBar>
-            {/* End Top bar */ }
-
-
-            {
-            adminView
-            ?
-            <AdminView></AdminView>
-            :
-            <h1>Hello World</h1>
-            // <ScheduleClass></ScheduleClass>
-            }
-
-
-
-            {/* Footer */}
-              <Box sx={{ bgcolor: 'background.paper', p: 6 }} component="footer">
-                <img src={VertizLogo} style={{width: '100px'}}></img>
-                <Typography variant="h6" align="center" gutterBottom>
-                    Ricardo Vertiz VIP App V1.0
-                </Typography>
-                <Typography
-                    variant="subtitle1"
-                    align="center"
-                    color="text.secondary"
-                    component="p"
-                >
-                    La mejor escuela de manejo en Guadalajara
-                </Typography>
-                <Copyright />
-            </Box>
-            {/* End footer */}
-        </ThemeProvider>
+        <h2>Hello World</h2>
     </div>
   );
 }
