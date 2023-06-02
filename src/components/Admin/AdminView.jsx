@@ -24,8 +24,8 @@ export default function AdminView (props) {
     }
 
     useEffect(() => {
-        //getToday();
-        //checkLoginCookie();
+        getToday();
+        checkLoginCookie();
     }, []);
 
 
