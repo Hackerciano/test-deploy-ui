@@ -1,6 +1,6 @@
 import './App.css';
 // import ScheduleClass from './components/ScheduleClass';
-
+import AdminView from './components/Admin/AdminView';
 import VertizVIPLogo from './assets/logo.svg';
 import VertizLogo from './assets/logo.png';
 import { useEffect, useState } from 'react';
@@ -59,7 +59,7 @@ function App() {
 
   return (
     <div className="App">
-        <h2>Hello World</h2>
+        <AdminView></AdminView>
     </div>
   );
 }
