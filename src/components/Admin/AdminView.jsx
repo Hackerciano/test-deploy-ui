@@ -12,81 +12,81 @@ import { useEffect, useState } from "react";
 
 
 export default function AdminView (props) {
-    const [stringWeek, setStringWeek] = useState('');
-    const [updateData, setUpdateData] = useState(false);
-    const [currentWeek, setCurrentWeek] = useState(0);
-    const [login, setLogin] = useState(false);
+    // const [stringWeek, setStringWeek] = useState('');
+    // const [updateData, setUpdateData] = useState(false);
+    // const [currentWeek, setCurrentWeek] = useState(0);
+    // const [login, setLogin] = useState(false);
 
-    Date.prototype.addDays = function(days) {
-        var date = new Date(this.valueOf());
-        date.setDate(date.getDate() + days);
-        return date;
-    }
+    // Date.prototype.addDays = function(days) {
+    //     var date = new Date(this.valueOf());
+    //     date.setDate(date.getDate() + days);
+    //     return date;
+    // }
 
-    useEffect(() => {
-        getToday();
-        checkLoginCookie();
-    }, []);
+    // useEffect(() => {
+    //     // getToday();
+    //     // checkLoginCookie();
+    // }, []);
 
 
-    let checkLoginCookie = () => {
-        let adminLogguedIn = getCookie('adminLogin');
-        (adminLogguedIn == 'true') && setLogin(true);
-    }
+    // let checkLoginCookie = () => {
+    //     let adminLogguedIn = getCookie('adminLogin');
+    //     (adminLogguedIn == 'true') && setLogin(true);
+    // }
 
-    let getCookie = (cname) => {
-        let name = cname + "=";
-        let decodedCookie = decodeURIComponent(document.cookie);
-        let ca = decodedCookie.split(';');
-        for(let i = 0; i <ca.length; i++) {
-            let c = ca[i];
-            while (c.charAt(0) == ' ') {
-                c = c.substring(1);
-            }
-            if (c.indexOf(name) == 0) {
-                return c.substring(name.length, c.length);
-            }
-        }
-        return "";
-    }
+    // let getCookie = (cname) => {
+    //     let name = cname + "=";
+    //     let decodedCookie = decodeURIComponent(document.cookie);
+    //     let ca = decodedCookie.split(';');
+    //     for(let i = 0; i <ca.length; i++) {
+    //         let c = ca[i];
+    //         while (c.charAt(0) == ' ') {
+    //             c = c.substring(1);
+    //         }
+    //         if (c.indexOf(name) == 0) {
+    //             return c.substring(name.length, c.length);
+    //         }
+    //     }
+    //     return "";
+    // }
 
-    let getToday = () => {
-        let today = new Date();
-        let thisWeek = new Date(today).getWeek();
-        setCurrentWeek(thisWeek);
-    }
+    // let getToday = () => {
+    //     let today = new Date();
+    //     let thisWeek = new Date(today).getWeek();
+    //     setCurrentWeek(thisWeek);
+    // }
 
-    let handleNewWeek = (e, page) => {
-        console.log(page);
-        setCurrentWeek(page);
-    }
+    // let handleNewWeek = (e, page) => {
+    //     console.log(page);
+    //     setCurrentWeek(page);
+    // }
 
-    Date.prototype.getWeek = function() {
-        var date = new Date(this.getTime());
-        date.setHours(0, 0, 0, 0);
-        // Thursday in current week decides the year.
-        date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
-        // January 4 is always in week 1.
-        var week1 = new Date(date.getFullYear(), 0, 4);
-        // Adjust to Thursday in week 1 and count number of weeks from date to week1.
-        return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000
-                              - 3 + (week1.getDay() + 6) % 7) / 7);
-    }
+    // Date.prototype.getWeek = function() {
+    //     var date = new Date(this.getTime());
+    //     date.setHours(0, 0, 0, 0);
+    //     // Thursday in current week decides the year.
+    //     date.setDate(date.getDate() + 3 - (date.getDay() + 6) % 7);
+    //     // January 4 is always in week 1.
+    //     var week1 = new Date(date.getFullYear(), 0, 4);
+    //     // Adjust to Thursday in week 1 and count number of weeks from date to week1.
+    //     return 1 + Math.round(((date.getTime() - week1.getTime()) / 86400000
+    //                           - 3 + (week1.getDay() + 6) % 7) / 7);
+    // }
 
-    let CustomPagination = () => {
-        return (
-            <Stack spacing={0} sx={{width: '100%'}}>
-                        <Pagination 
-                            count={52} 
-                            color="secondary" 
-                            size='medium'
-                            boundaryCount={52}
-                            defaultPage={currentWeek}
-                            onChange={(e, page) => handleNewWeek(e, page)}
-                            />
-                    </Stack>
-        )
-    }
+    // let CustomPagination = () => {
+    //     return (
+    //         <Stack spacing={0} sx={{width: '100%'}}>
+    //                     <Pagination 
+    //                         count={52} 
+    //                         color="secondary" 
+    //                         size='medium'
+    //                         boundaryCount={52}
+    //                         defaultPage={currentWeek}
+    //                         onChange={(e, page) => handleNewWeek(e, page)}
+    //                         />
+    //                 </Stack>
+    //     )
+    // }
 
     return (
         <Grid sx={{margin: '10px 20px'}}>
